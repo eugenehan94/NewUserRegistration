@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.user.bean.Users;
 import com.user.dao.UserDAO;
@@ -15,9 +17,9 @@ import com.user.dao.UserDAO;
 public class UserController {
 
 	@Autowired
-	UserDAO dao; //inject the dao from the xml file
-	
-	//This creates the object when user selects new users on index.jsp
+	UserDAO dao; // inject the dao from the xml file
+
+	// This creates the object when user selects new users on index.jsp
 	@RequestMapping("/newUser")
 	public String redirect(Model m) {
 		Users user = new Users();
@@ -32,13 +34,35 @@ public class UserController {
 		return "confirmation";
 
 	}
-	//Returns the list of users in the mySQL database
+
+	// Returns the list of users in the mySQL database
 	@RequestMapping("/viewUser")
 	public String viewUser(Model m) {
 		List<Users> list = dao.getUsers();
 		m.addAttribute("list", list);
 		return "viewUsers";
-				
+
 	}
 
+	/* Deletes the user*/ 
+	@RequestMapping(value = "/deleteUser/{userId}", method = RequestMethod.GET)
+	public String delete(@PathVariable int userId) {
+		dao.delete(userId);
+		return "redirect:/viewUser";
+	}
+	
+	@RequestMapping(value="/editUser/{userId}")
+	public String edit(@PathVariable int userId, Model m) {
+		Users user=dao.getUserById(userId);
+		m.addAttribute("command", user);
+		return "userEditForm";
+		
+	}
+
+	@RequestMapping(value="/editsave", method= RequestMethod.POST)
+	public String editsave(@ModelAttribute("user")Users user) {
+		dao.update(user);
+		return "redirect:/viewUser";
+	}
+	
 }
