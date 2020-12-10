@@ -9,7 +9,7 @@
 <body>
 
 <a href="newUser">New User</a> <br>
-<a href ="">View Users</a>
+<a href ="viewUser">View Users</a>
 
 </body>
 </html>

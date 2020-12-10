@@ -1,11 +1,17 @@
 package com.user.bean;
 
 public class Users {
-
+	private int userId;
 	private String firstName;
 	private String lastName;
 	private String Gender;
 	
+	public int getUserId() {
+		return userId;
+	}
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
 	public String getFirstName() {
 		return firstName;
 	}
