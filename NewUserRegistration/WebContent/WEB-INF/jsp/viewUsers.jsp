@@ -10,15 +10,26 @@
 <title>Admin Page</title>
 </head>
 <body>
-<h1>Registered Users</h1>
-<c:forEach var="users" items="${list}">
-<tr>
-<td> ${users.userId}</td>
-<td> ${users.firstName}</td>
-<td> ${users.lastName}</td>
-<td> ${users.gender}</td> <br>
-</tr>
-</c:forEach>
+	<h1>Registered Users</h1>
+	<table border="2" width="70%" cellpadding="2">
+		<tr>
+			<th>User Id</th>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Gender</th>
+		</tr>
+		<c:forEach var="users" items="${list}">
+			<tr>
+				<td>${users.userId}</td>
+				<td>${users.firstName}</td>
+				<td>${users.lastName}</td>
+				<td>${users.gender}</td>
+				<td><a href="deleteUser/${users.userId}">Delete</a></td>
+				<td><a href="editUser/${users.userId}">Edit</a>
+				<br>
+			</tr>
+		</c:forEach>
+	</table>
 
 </body>
 </html>
