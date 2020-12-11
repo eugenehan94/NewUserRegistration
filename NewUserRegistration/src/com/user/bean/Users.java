@@ -1,9 +1,16 @@
 package com.user.bean;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 public class Users {
 	private int userId;
+	
+	@Size(min=2, message="Must be 2 or more characters")
 	private String firstName;
+	@Size(min=2, message="Must be 2 or more characters")
 	private String lastName;
+	@NotNull(message="Please select gender")
 	private String Gender;
 	
 	public int getUserId() {

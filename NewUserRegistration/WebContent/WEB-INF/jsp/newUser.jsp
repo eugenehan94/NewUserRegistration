@@ -13,10 +13,11 @@
 
 	<form:form action="userSubmit" modelAttribute="Users">
 
-		First Name: <form:input path ="firstName" /> <br> <br>
-		Last Name: <form:input path = "lastName" /> <br> <br>
+		First Name: <form:input path ="firstName" /> <form:errors path="firstName"/><br> <br>
+		Last Name: <form:input path = "lastName" /> <form:errors path="lastName"/> <br> <br>
 		
 		Gender: Male: <form:radiobutton path="Gender" value="Male"/> Female: <form:radiobutton path="Gender" value="Female"/>
+		<form:errors path="Gender"/>
 		<br><br>
 		<input type="submit" value="Submit">
 	</form:form>

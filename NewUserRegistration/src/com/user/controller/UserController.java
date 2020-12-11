@@ -2,9 +2,12 @@ package com.user.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,10 +32,14 @@ public class UserController {
 
 	// When the submit button is pushed on newUser.jsp
 	@RequestMapping("/userSubmit")
-	public String submitForm(@ModelAttribute("Users") Users user) {
-		dao.save(user);
-		return "confirmation";
+	public String submitForm(@Valid @ModelAttribute("Users") Users user, BindingResult br) {
 
+		if (br.hasErrors()) {
+			return "newUser";
+		} else {
+			dao.save(user);
+			return "newUser";
+		}
 	}
 
 	// Returns the list of users in the mySQL database
@@ -44,25 +51,25 @@ public class UserController {
 
 	}
 
-	/* Deletes the user*/ 
+	/* Deletes the user */
 	@RequestMapping(value = "/deleteUser/{userId}", method = RequestMethod.GET)
 	public String delete(@PathVariable int userId) {
 		dao.delete(userId);
 		return "redirect:/viewUser";
 	}
-	
-	@RequestMapping(value="/editUser/{userId}")
+
+	@RequestMapping(value = "/editUser/{userId}")
 	public String edit(@PathVariable int userId, Model m) {
-		Users user=dao.getUserById(userId);
+		Users user = dao.getUserById(userId);
 		m.addAttribute("command", user);
 		return "userEditForm";
-		
+
 	}
 
-	@RequestMapping(value="/editsave", method= RequestMethod.POST)
-	public String editsave(@ModelAttribute("user")Users user) {
+	@RequestMapping(value = "/editsave", method = RequestMethod.POST)
+	public String editsave(@ModelAttribute("user") Users user) {
 		dao.update(user);
 		return "redirect:/viewUser";
 	}
-	
+
 }
