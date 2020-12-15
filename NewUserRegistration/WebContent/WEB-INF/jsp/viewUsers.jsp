@@ -17,6 +17,8 @@
 			<th>First Name</th>
 			<th>Last Name</th>
 			<th>Gender</th>
+			<th>E-mail Address</th>
+			<th>Telephone Number</th>
 		</tr>
 		<c:forEach var="users" items="${list}">
 			<tr>
@@ -24,6 +26,8 @@
 				<td>${users.firstName}</td>
 				<td>${users.lastName}</td>
 				<td>${users.gender}</td>
+				<td>${users.phoneNumber}</td>
+				<td>${users.email}</td>
 				<td><a href="deleteUser/${users.userId}">Delete</a></td>
 				<td><a href="editUser/${users.userId}">Edit</a>
 				<br>

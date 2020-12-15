@@ -13,15 +13,34 @@
 	<h1>Edit User</h1>
 	<form:form method="POST" action="/NewUserRegistration/editsave">
 	
-		UserId: <form:input path="userId"/> <br><br>
+		<form:label path="userId">UserId:</form:label> 
+		<form:input path="userId"/> <br><br>
 	
-	First Name: <form:input path ="firstName" /> <br> <br>
-		Last Name: <form:input path = "lastName" /> <br> <br>
+		<form:label path="firstName"> First Name:</form:label> 
+		<form:input path ="firstName" /> <br>
+		<form:errors path="firstName"/><br><br>
 		
-		Gender: Male: <form:radiobutton path="Gender" value="Male"/> Female: <form:radiobutton path="Gender" value="Female"/>
+		<form:label path="lastName">Last Name:</form:label>
+		<form:input path = "lastName" /> <br>
+		<form:errors path="lastName"/> <br> <br>
+		
+		<form:label path="Gender"> Gender: </form:label> 
+		<form:radiobutton path="Gender" value="Male"/> Male
+		<form:radiobutton path="Gender" value="Female"/>Female<br>
+		<form:errors path="Gender"/>
 		<br><br>
+		
+		<form:label path="phoneNumber"> Phone Number:</form:label>
+		<form:input path="phoneNumber"/><br>
+		<form:errors path="phoneNumber"/> <br><br>
+		
+		<form:label path="email">E-mail Address: </form:label>
+		<form:input path="email"/><br>
+		<form:errors path="email"/>
+		<br><br>
+		
 		<input type="submit" value="Save Edits">
-
+		
 
 	</form:form>
 
