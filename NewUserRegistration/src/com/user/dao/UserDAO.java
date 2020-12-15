@@ -18,8 +18,9 @@ public class UserDAO {
 	}
 
 	public int save(Users u) {
-		String sql = "INSERT into newuser(firstName, lastName, Gender) values('" + u.getFirstName() + "', '"
-				+ u.getLastName() + "', '" + u.getGender() + "')";
+		String sql = "INSERT into newuser(firstName, lastName, Gender, phoneNumber, email) values('" + u.getFirstName()
+				+ "', '" + u.getLastName() + "', '" + u.getGender() + "', '" + u.getPhoneNumber() + "', '"
+				+ u.getEmail() + "')";
 		return template.update(sql);
 	}
 
@@ -34,6 +35,8 @@ public class UserDAO {
 				u.setFirstName(rs.getString(2));
 				u.setLastName(rs.getString(3));
 				u.setGender(rs.getString(4));
+				u.setPhoneNumber(rs.getString(5));
+				u.setEmail(rs.getString(6));
 				return u;
 			}
 		});
@@ -52,7 +55,8 @@ public class UserDAO {
 
 	public int update(Users user) {
 		String sql = "update newuser set firstName='" + user.getFirstName() + "', lastName='" + user.getLastName()
-				+ "', Gender='" + user.getGender() + "' where userId=" + user.getUserId() + "";
+				+ "', Gender='" + user.getGender() + "', phoneNumber='" + user.getPhoneNumber() + "', email='"
+				+ user.getEmail() + "' where userId=" + user.getUserId() + "";
 		return template.update(sql);
 	}
 
