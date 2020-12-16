@@ -40,6 +40,7 @@
 		<br><br>
 		
 		<input type="submit" value="Save Edits">
+		<a href="cancelEdit">Cancel</a>
 		
 
 	</form:form>

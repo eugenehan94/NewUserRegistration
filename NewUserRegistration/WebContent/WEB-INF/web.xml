@@ -13,6 +13,9 @@
 		<welcome-file>default.jsp</welcome-file>
 	</welcome-file-list>
 
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
 
 	<servlet>
 		<servlet-name>springframework</servlet-name>
@@ -24,6 +27,7 @@
 		<servlet-name>springframework</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
+
 
 
 </web-app>
