@@ -38,7 +38,7 @@ public class UserController {
 			return "newUser";
 		} else {
 			dao.save(user);
-			return "newUser";
+			return "redirect:newUser";
 		}
 	}
 
@@ -71,5 +71,11 @@ public class UserController {
 		dao.update(user);
 		return "redirect:/viewUser";
 	}
+
+	@RequestMapping(value = "/editUser/cancelEdit")
+	public String cancelEdit() {
+		return "redirect:/viewUser";
+	}
+
 
 }

@@ -9,7 +9,7 @@
 </head>
 <body>
 
-	<h1>New User</h1>
+	<h1>New User</h1> 
 
 	<form:form action="userSubmit" modelAttribute="Users">
 
