@@ -26,6 +26,7 @@ body {
 	border-bottom: 1px solid #f0f0f0;
 	background-color: #f7f7f7;
 	padding: 20px 40px;
+	
 }
 
 .header h1 {
@@ -36,8 +37,56 @@ body {
 	padding: 30px 40px;
 }
 
+#formButton {
+	background-color: #8e44ad;
+	border: 2px solid #8e44ad;
+	color: #fff;
+	display: block;
+	font-family: inherit;
+	font-size: 16px;
+	padding: 10px;
+	margin-top: 20px;
+	width: 100%;
+}
+
 .form-input {
 	margin-bottom: 10px;
 	padding-bottom: 20px;
 	position: relative;
+}
+
+.form-errors {
+	color: red;
+	font-style: italic;
+}
+
+
+
+.content-table{
+	border-collapse: collapse;
+	margin: 25px 0;
+	font-size: 0.9em;
+	border-radius: 5px 5px 0 0;
+	overflow: hidden;
+	box-shadow: 0 0 20px rgba(0,0,0,0.15);
+	background-color: #fff;
+	width: 100%;
+}
+.content-table tr th {
+	background-color: #009879;
+	color: #ffffff;
+	text-align: left;
+	font-weight: bold;
+}
+
+tr:hover {
+	background-color: #ddd;
+}
+.content-table th, .content-table td {
+	padding: 12px 15px;
+}
+
+.content-table tr td {
+	border-bottom: 1px solid #dddddd;
+	border-right: 1px solid #dddddd;
 }

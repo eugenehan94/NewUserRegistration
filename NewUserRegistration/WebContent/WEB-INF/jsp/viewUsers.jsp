@@ -12,14 +12,17 @@
 </head>
 <body>
 	<h1>Registered Users</h1>
-	<table border="2" width="70%" cellpadding="2">
+	
+	<table class="content-table">
 		<tr>
 			<th>User Id</th>
 			<th>First Name</th>
 			<th>Last Name</th>
 			<th>Gender</th>
-			<th>E-mail Address</th>
 			<th>Telephone Number</th>
+			<th>E-mail Address</th>
+			<th> </th>
+			<th> </th>
 		</tr>
 		<c:forEach var="users" items="${list}">
 			<tr>

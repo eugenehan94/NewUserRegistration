@@ -8,18 +8,20 @@ import javax.validation.constraints.Size;
 public class Users {
 	private int userId;
 	
-	
-	@Size(min=2, message="Must be 2 or more characters")
+	@Pattern(regexp="^[a-zA-Z]+$", message="*Must be letters")
+	@Size(min=2, message="*Must be 2 or more characters")
 	private String firstName;
-	@Size(min=2, message="Must be 2 or more characters")
+	@Pattern(regexp="^[a-zA-Z]+$", message="*Must be letters")
+	@Size(min=2, message="*Must be 2 or more characters")
 	private String lastName;
-	@NotNull(message="Please select gender")
+	
+	@NotNull(message="*Please select gender")
 	private String Gender;
 		
-	@Pattern(regexp="^[0-9]+${10}", message="Please enter a Canadian phone number")
+	@Pattern(regexp="^\\d{10}$", message="*Please enter a Canadian phone number")
 	private String phoneNumber;
 	
-	@Pattern(regexp="[-A-Za-z0-9_.%]+@[-A-Za-z0-9_.%]+\\.[A-Za-z]+", message="Please enter an email address")
+	@Pattern(regexp="[-A-Za-z0-9_.%]+@[-A-Za-z0-9_.%]+\\.[A-Za-z]+", message="*Please enter an email address")
 	private String email;
 	
 	
