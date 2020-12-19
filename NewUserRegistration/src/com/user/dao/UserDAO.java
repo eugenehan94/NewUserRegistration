@@ -54,9 +54,9 @@ public class UserDAO {
 	}
 
 	public int update(Users user) {
-		String sql = "update newuser set firstName='" + user.getFirstName() + "', lastName='" + user.getLastName()
-				+ "', Gender='" + user.getGender() + "', phoneNumber='" + user.getPhoneNumber() + "', email='"
-				+ user.getEmail() + "' where userId=" + user.getUserId() + "";
+		String sql = "update newuser set userId='" + user.getUserId() + "',  firstName='" + user.getFirstName()
+				+ "', lastName='" + user.getLastName() + "', Gender='" + user.getGender() + "', phoneNumber='"
+				+ user.getPhoneNumber() + "', email='" + user.getEmail() + "' where userId=" + user.getUserId() + "";
 		return template.update(sql);
 	}
 
