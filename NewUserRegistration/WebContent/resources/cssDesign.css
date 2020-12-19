@@ -3,6 +3,7 @@
 body {
 	background-color: #9b59b6;
 	font-family: 'Open Sans', sans-serif;
+	margin: 0;
 }
 
 #newUserBody {
@@ -26,7 +27,6 @@ body {
 	border-bottom: 1px solid #f0f0f0;
 	background-color: #f7f7f7;
 	padding: 20px 40px;
-	
 }
 
 .header h1 {
@@ -49,6 +49,11 @@ body {
 	width: 100%;
 }
 
+#formButton:hover {
+	background-color: #9b59b6;
+	border: 2px solid #9b59b6;
+}
+
 .form-input {
 	margin-bottom: 10px;
 	padding-bottom: 20px;
@@ -60,18 +65,17 @@ body {
 	font-style: italic;
 }
 
-
-
-.content-table{
+.content-table {
 	border-collapse: collapse;
 	margin: 25px 0;
 	font-size: 0.9em;
 	border-radius: 5px 5px 0 0;
 	overflow: hidden;
-	box-shadow: 0 0 20px rgba(0,0,0,0.15);
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 	background-color: #fff;
 	width: 100%;
 }
+
 .content-table tr th {
 	background-color: #009879;
 	color: #ffffff;
@@ -82,6 +86,7 @@ body {
 tr:hover {
 	background-color: #ddd;
 }
+
 .content-table th, .content-table td {
 	padding: 12px 15px;
 }
@@ -89,4 +94,45 @@ tr:hover {
 .content-table tr td {
 	border-bottom: 1px solid #dddddd;
 	border-right: 1px solid #dddddd;
+}
+
+.container a:link, .container a:visited {
+	background-color: #f44336;
+	color: white;
+	padding: 14px 25px;
+	margin: 10px 0; text-align : center;
+	text-decoration: none;
+	display: block;
+	text-align: center;
+}
+
+.container a:hover, .container a:active {
+	background-color: red;
+}
+
+.content-table a:link, .content-table a:visited {
+	text-decoration: none;
+}
+.content-table a:hover, .content-table a:active {
+	text-decoration: underline;
+}
+.content-table th a {
+	color: red;
+	font: bold;
+}
+
+.indexHeader{
+	background-color: lightblue;
+	text-align: center;
+	padding: 30px;
+}
+
+
+.indexFooter{
+	padding: 20px;
+	text-align: center;
+	background: #ddd;
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
 }

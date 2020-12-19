@@ -77,5 +77,13 @@ public class UserController {
 		return "redirect:/viewUser";
 	}
 
-
+	@RequestMapping("/viewExistingUser")
+	public String viewExistingUser () {
+		return "redirect:/viewUser";
+	}
+	@RequestMapping("/enterNewUser")
+	public String enterNewUser() {
+		return "redirect:/newUser";
+	}
+	
 }

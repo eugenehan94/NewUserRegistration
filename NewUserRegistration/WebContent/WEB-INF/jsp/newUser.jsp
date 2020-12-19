@@ -67,6 +67,8 @@
 				
 		<input type="submit" value="Submit" id="formButton">
 		
+		<a href="viewExistingUser">View Registered User</a>
+		
 	</form:form>
 
 </div>
