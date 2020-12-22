@@ -20,7 +20,11 @@
 	<div class="outerForm">
 	
 	<form:form action="userSubmit" modelAttribute="Users">
-
+		
+		<div class ="completeMessage">
+		${successMsg}
+		</div>
+		
 		<div class="form-input">
 		<form:label path="firstName"> First Name:</form:label> 
 		<form:input path ="firstName" /> <br>

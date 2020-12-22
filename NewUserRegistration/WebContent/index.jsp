@@ -14,10 +14,10 @@
 
 	<div class="indexHeader">This is the banner</div>
 
-
-	<a href="newUser">New User</a>
-	<br>
-	<a href="viewUser">View Users</a>
+	<div class="indexBody">
+		<a href="newUser">New User</a> <br> 
+		<a href="viewUser">View	Users</a>
+	</div>
 	<div class="indexFooter">This is a footer</div>
 
 </body>

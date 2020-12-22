@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.user.bean.Users;
 import com.user.dao.UserDAO;
@@ -19,6 +20,8 @@ import com.user.dao.UserDAO;
 @Controller
 public class UserController {
 
+	
+	
 	@Autowired
 	UserDAO dao; // inject the dao from the xml file
 
@@ -32,11 +35,12 @@ public class UserController {
 
 	// When the submit button is pushed on newUser.jsp
 	@RequestMapping("/userSubmit")
-	public String submitForm(@Valid @ModelAttribute("Users") Users user, BindingResult br) {
+	public String submitForm(@Valid @ModelAttribute("Users") Users user, BindingResult br, RedirectAttributes attributes) {
 
 		if (br.hasErrors()) {
 			return "newUser";
 		} else {
+			attributes.addFlashAttribute("successMsg", "User has been sucessfully added");
 			dao.save(user);
 			return "redirect:newUser";
 		}
