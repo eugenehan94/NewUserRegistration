@@ -11,8 +11,8 @@
 
 </head>
 <body>
-
-	<div class="indexHeader">This is the banner</div>
+	
+	<div class="indexHeader"></div>
 
 	<div class="indexBody">
 		<a href="newUser">New User</a> <br> 

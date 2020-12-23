@@ -11,8 +11,10 @@
 <link rel="stylesheet" href="<c:url value ="/resources/cssDesign.css"/>">
 </head>
 <body>
+	
+	<div class="viewUsersHeader">
 	<h1>Registered Users</h1>
-
+	</div>
 	<table class="content-table">
 		<tr>
 			<th>User Id</th>
