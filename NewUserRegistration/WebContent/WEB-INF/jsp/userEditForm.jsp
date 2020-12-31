@@ -66,7 +66,7 @@
 		<form:errors path="email"/>
 		<br>
 		</div> 	
-		
+		</div>
 		<input type="submit" value="Save Edits" id="formButton">
 		
 		<a href="cancelEdit">Cancel</a>
