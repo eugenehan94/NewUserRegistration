@@ -19,8 +19,6 @@ import com.user.dao.UserDAO;
 
 @Controller
 public class UserController {
-
-	
 	
 	@Autowired
 	UserDAO dao; // inject the dao from the xml file
